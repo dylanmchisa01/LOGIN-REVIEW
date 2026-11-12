@@ -1,0 +1,24 @@
+#------------------------------ FUNCTIONS FOR SETTINGS MENU --------------------------------------------
+def dark_mode():
+    #THIS FUNCTION CHANGES THE APP TO DARKMODE
+    if app.bg == "black":               
+        app.bg = "aqua"
+        app.text_color = "black"
+
+    else:
+        app.bg = "black"
+        app.text_color = "white"
+
+    
+
+def font_size(slider_value):
+    #THIS FUNCTION CHANGES THE FONT SIZE USING AN ADJUSTABLE SLIDER 
+    size = int(slider_value)     # The value selected from the silder is turned into variable size
+    app.text_size = size         # targets all the text on the app  
+    
+
+
+def change_font():
+    #THIS FUNCTION CHANGES THE FONT STYLE 
+    font = font_combo.value  #The selected font is turned into a varaible called font
+    app.font = font                # Changes the font of the all pagees of the app
