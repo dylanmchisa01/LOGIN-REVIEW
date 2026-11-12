@@ -1,0 +1,45 @@
+# APP WINDOW
+app = App( title="Login", height=600, bg = "aqua")
+main_top_box = Box(app, align="top", width="fill")
+login_settings = PushButton(main_top_box, text="Settings", align="left", command = open_settings)
+#
+#LOGIN WINDOW
+#
+#-----------------------------------------------LOGO AND TITLE ------------------------------------------------------------------
+Logo = Picture(app, image="logo.png", width=50, height=50)
+login_spacetxt = Text(app, text="                                    ")
+login_spacetxt2 = Text(app, text="                                    ")
+login_toptxt = Text(app, text="SHELA INDUSTRIES", size=20, font = "Algerian")
+login_toptxt2 = Text(app, text="World leading Sea Shell Company ", size=10)
+login_spacetxt3 = Text(app, text="    ") 
+#---------------------------------------------------------------------------------------------------------------------------------
+login_box = Box(app, layout="grid")
+
+                                                #USERNAME
+login_blanktxt1 = Text(login_box , text="            ", grid=[1,0])
+login_username = Text(login_box , text="Enter Username", align="left", grid=[0,0], size=15)
+login_username_text = TextBox(login_box , hide_text=False, align="left", grid=[2,0], width=30)
+login_blanktxt2 = Text(login_box, text="            ", grid=[1,1])
+
+                                                #PASSWORD 
+password = Text(login_box, text="Enter Password", align="left", grid=[0,1], size=15)
+login_pw = TextBox(login_box, hide_text=True, align="left", grid=[2,1], width=30)
+
+                                                #COOKIES CHECKBOX
+cookies = CheckBox(login_box, text="Agree to cookies",align="left", grid=[2, 2],command = cookies)
+
+                                                #LOGIN BUTTON
+
+login_button = PushButton(app, text=" Login ", command=login_user)
+
+                                                #SIGNUP BUTTON
+
+login_signup = PushButton(app, text=" Signup", command=Open_Signup)
+
+                                                #SETTINGS BUTTON
+login_spacetxt3 = Text(app, text="    ")
+
+                                                #FORGOT PASSWORD
+login_bottom_text = Text(app, text="Forgot your password?", color="#7b7fff", size=12)
+
+#
