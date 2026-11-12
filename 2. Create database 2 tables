@@ -1,0 +1,93 @@
+
+# SQL creation and inserting test data
+sql = """
+CREATE TABLE "Customer" ( 
+"CustomerID" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+"Customer_name" TEXT,
+"Customer_firstname" TEXT,
+"Customer_surname" TEXT,
+"Customer_password" TEXT,
+"Customer_email" TEXT
+);
+CREATE TABLE "Review" (
+"ReviewID"  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+"Review_Text" TEXT,
+"Review_Stars" TEXT,
+"CustomerID"  INTEGER NOT NULL,
+FOREIGN KEY(CustomerID) REFERENCES Customer(Customer_ID)
+);
+insert into Customer (Customer_name, Customer_firstname, Customer_surname, Customer_password, Customer_email) values ('qwerty', 'qwerty', 'qwerty', 'qwerty', 'qwerty@gmail.com');
+
+INSERT INTO Customer 
+(Customer_name, Customer_firstname, Customer_surname, Customer_password, Customer_email) 
+VALUES ('UEmily', 'Emily', 'Taylor', 'pw5', 'emily.taylor@gmail.com');
+
+INSERT INTO Customer 
+(Customer_name, Customer_firstname, Customer_surname, Customer_password, Customer_email) 
+VALUES ('UDaniel', 'Daniel', 'Wilson', 'pw6', 'daniel.wilson@gmail.com');
+
+INSERT INTO Customer 
+(Customer_name, Customer_firstname, Customer_surname, Customer_password, Customer_email) 
+VALUES ('UChloe', 'Chloe', 'Davies', 'pw7', 'chloe.davies@gmail.com');
+
+INSERT INTO Customer 
+(Customer_name, Customer_firstname, Customer_surname, Customer_password, Customer_email) 
+VALUES ('UJack', 'Jack', 'Thompson', 'pw8', 'jack.thompson@gmail.com');
+
+INSERT INTO Customer 
+(Customer_name, Customer_firstname, Customer_surname, Customer_password, Customer_email) 
+VALUES ('UAmelia', 'Amelia', 'Roberts', 'pw9', 'amelia.roberts@gmail.com');
+
+
+
+
+
+
+
+
+
+insert into Review (ReviewID, Review_Text,Review_Stars, CustomerID) values ('1', 'good', 'Review Stars', '1');
+INSERT INTO Review 
+(ReviewID, Review_Text, Review_Stars, CustomerID) 
+VALUES ('2', 'Great service and lovely products', '5', '2');
+
+INSERT INTO Review 
+(ReviewID, Review_Text, Review_Stars, CustomerID) 
+VALUES ('3', 'Really enjoyed my experience', '4', '3');
+
+INSERT INTO Review 
+(ReviewID, Review_Text, Review_Stars, CustomerID) 
+VALUES ('4', 'Very good quality', '5', '4');
+
+INSERT INTO Review 
+(ReviewID, Review_Text, Review_Stars, CustomerID) 
+VALUES ('5', 'The service was okay', '3', '5');
+
+INSERT INTO Review 
+(ReviewID, Review_Text, Review_Stars, CustomerID) 
+VALUES ('6', 'Excellent products', '5', '6');
+
+INSERT INTO Review 
+(ReviewID, Review_Text, Review_Stars, CustomerID) 
+VALUES ('7', 'Could be better', '2', '7');
+
+"""
+#
+# global variables
+#
+database_file = 'myDB.db'
+#
+#
+starselected = 0
+Customer_LoggedIn = 0
+
+
+if os.path.exists(database_file):
+   os.remove(database_file) # Removes database each time program starts for test purposes
+#
+conn = sqlite3.connect(database_file) 
+cursor = conn.cursor()
+cursor.executescript(sql)
+conn.commit() # Initialising SQL integration 
+#
+#
