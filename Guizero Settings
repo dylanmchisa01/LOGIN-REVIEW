@@ -1,0 +1,31 @@
+#------------------------------------------------------SETTINGS---------------------------------------------------------------------------#
+
+settings_window = Window(app, title ="SETTINGS", height=600, bg = "aqua")
+settings_toptxt = Text(settings_window, text="ACCESSIBILITY SETTINGS", size=20,font = "Algerian")
+settings_exit_box = Box(settings_window, width="fill", align="top")
+settings_blank_text = Text(settings_window, text="\n")
+
+# DARK MODE SETTING
+settings_darkmode_button = PushButton(settings_window, text = "Dark Mode", width = 20 , grid=[3,3], command=dark_mode)
+
+#FONT SIZE SETTING
+Text(settings_window, text="Font Size")
+font_slider = Slider(settings_window,start=0, end=30, command=font_size, width = 170)
+
+#FONT STYLE SETTING
+Text(settings_window, text="Font Style")
+font_combo = Combo(settings_window, options=["Arial", "Times New Roman", "Courier New", "Algerian"], command = change_font)
+
+#
+
+
+sign_exit_button.bg = "white"
+sign_save_button.bg = "white"
+
+sign_window.hide() # hide until needed
+review_window.hide() # hide until needed
+settings_window.hide()# hide until needed
+
+
+
+app.display() # Display app on startup
