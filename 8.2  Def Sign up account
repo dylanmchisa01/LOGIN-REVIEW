@@ -1,0 +1,74 @@
+def signup_create_account():
+    # Procedure to create an account
+    username = sign_username.value
+    password = sign_password.value
+    confirm_password = sign_confirm.value
+    firstname = sign_firstname.value
+    surname = sign_surname.value
+    email = sign_email.value
+
+    if sign_username.value == "":
+        info("Error", "Username field is empty") # Checks if username input is empty (presence check)
+
+    elif not sign_username.value.isalpha():
+            info("Error", "Username cannot contain special characters") # Checks if username has no numbers or special characters (type check)
+
+
+
+    #LENGTH CHECK FOR USERNAME 
+    elif len(username) > 15:
+        info("Error", "Username cannot be more than 15 characters") # Limts the username to 15 characters 
+    elif len(username) < 5:
+        info("Error", "Username cannot be less than 5 characters")
+
+
+
+    #PRSENCE CHECK FOR PASSWORD
+    elif password== "":
+        info("Error", "Password filed is empty") # # Checks if password input is empty (presence check)
+
+    #LENGTH CHECK  FOR PASSWORD
+    elif len(password) > 15:
+        info("Error", "Password cannot be more than 15 characters")
+    elif len(password) < 8 :                                      # Range of the password must be between 8 to 15
+        info("Error", "Password cannot be less than 8 characters")
+
+    #TYPE CHECK FOR PASSWORD
+    elif not any(char.isdigit() for char in password):     
+        info("Error", "Password must contain a number")                      # Password must contain a number  
+    elif not any(char.isupper() for char in password):    
+        info("Error", "Password must contain a Capital letter")              # Password must contain a Capital letter
+    elif not any(char.isalnum() for char in password):
+        info("Error", "Password must contain a special character")           # Password must contain a Special Character
+
+    #LOGIC CHECK
+    elif password!= confirm_password:
+        info("Error","Passwords do not match")
+
+    elif firstname == "":
+        info("Error", "Firstname field is empty")
+
+    
+    elif firstname.isalpha() == False:
+            info("Error", "Firstname cannot contain numbers or special characters") # Checks if first name has no numbers or special characters (type check)
+
+    elif not firstname.isalpha():
+            info("Error", "Firstname cannot contain special characters")
+    elif surname == "":
+        info("Error", "Surname field is empty")
+    elif not surname.isalpha():
+            info("Error", "Firstname cannot contain special characters")
+    elif email == "":
+        info("Error", "Email field is empty")
+    elif "@" not in email or "." not in email:
+        info("Error", "Invalid email format should be xxxxxx@xxxx.com")
+
+    #
+    #
+    else:
+            query = "INSERT INTO Customer (Customer_name, Customer_firstname, Customer_surname, Customer_password, Customer_email) VALUES (?, ?, ?, ?, ?)"
+            execute_sql(database_file, query, (username, firstname, surname, password, email)) # SQL query to insert new user into User
+            info("Success", "Account successfully created")
+#
+#
+# https://lawsie.github.io/guizero/window/
