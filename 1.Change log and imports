@@ -1,0 +1,25 @@
+################################################################################################
+#                   PROGRAM NAME: SHELA INDUSTRIES                                                      #
+#                   FIRST CREATED: 25/06/2025                                                  #
+#                   PROGRAMMER: DYLAN MCHISA                                               #
+#                                                                                              #
+################################################################################################
+#                   CHANGE LOG:
+#                   +--------------------------------------------------------------------------+ 
+#                   | 04/09/2026   V1       DATABASE/LOGIN/SIGNUP CREATED             DYLANMCHISA      |
+#                   | 05/09/2026   V2       DASHBOARD/LOGIN/SIGNUP CREATED            DYLANMCHISA      |
+#                   | 07/09/2026   V3       REVIEW STARS AND COMMENTS                 DYLANMCHISA      |
+#                     13/09/2026   V4       SIGNUP AND LOGIN VALIDATION               DYLANMCHISA      |
+#                     14/09/2026   V5       COOKIES, TERMS AND CONDITIONS             DYLANMCHISA      |  
+#                     18/09/2026   V6       ADDING NEW USER TO DATABASE               DYLANMCHISA      |
+#                     29/09/2026   V7       ACCESSIBILITIES                           DYLANMCHISA      |
+#                   +--------------------------------------------------------------------------+
+#
+#
+from multiprocessing import Value
+from guizero import App, Window, PushButton, Text, Box, TextBox, Picture, info,CheckBox, Slider, Combo # Guizero imports to create front end
+
+import sqlite3
+#from sqlite3 import Error # sqlite import to create and manage database
+import os
+import os.path # OS import to edit system files
