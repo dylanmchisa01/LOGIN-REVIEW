@@ -1,0 +1,57 @@
+
+#----------------------------------------------SIGN UP WINDOW -----------------------------------------------------------------#
+
+sign_window = Window(app, title="Sign up", height=600, bg="aqua")
+sign_toptxt = Text(sign_window, text="SIGN UP", size=20,font = "Algerian")
+sign_toptxt2 = Text(sign_window, text="Please Enter Details", size=15) # Creating signup window
+################################################## USERNAME #####################################################
+
+sign_box = Box(sign_window, layout="grid")
+sign_blanktxt1 = Text(sign_box, text="            ", grid=[1,0])
+sign_text = Text(sign_box, text="Enter Username", align="left", grid=[0,0], size=15)
+sign_username = TextBox(sign_box, hide_text=False, grid=[2,0], width=30)
+sign_username.bg = 'white' # Creating a box with a grid layout and putting enter username textbox into box
+
+################################################## PASSWORD ################################################################## 
+
+sign_blanktxt2 = Text(sign_box, text="            ", grid=[1,1])
+sign_txt2= Text(sign_box, text="Enter Password", align="left", grid=[0,1], size=15)
+sign_password = TextBox(sign_box, hide_text=True, grid=[2,1], width=30)
+sign_password.bg = 'white'
+
+################################################# CONFRIM PASSWORD ############################################################# 
+
+sign_blanktxt3 = Text(sign_box, text="            ", grid=[1,2])
+sign_text3 = Text(sign_box, text="Confirm Password", align="left", grid=[0,2], size=15)
+sign_confirm = TextBox(sign_box, hide_text=True, grid=[2,2], width=30)
+sign_confirm.bg = 'white'
+
+
+#################################################   FIRST NAME    ############################################################################
+
+sign_blanktxt4 = Text(sign_box, text="            ", grid=[1,3])
+signtxt4 = Text(sign_box, text="Enter First Name", align="left", grid=[0,3], size=15)
+sign_firstname = TextBox(sign_box, hide_text=False, grid=[2,3], width=30)
+sign_firstname.bg = 'white'
+
+
+###################################################  SURNAME      ################################################################################
+
+sign_blanktxt5 = Text(sign_box, text="            ", grid=[1,4])
+sign_text5 = Text(sign_box, text="Enter Surname", align="left", grid=[0,4], size=15)
+sign_surname = TextBox(sign_box, hide_text=False, grid=[2,4], width=30)
+sign_surname.bg = 'white'
+
+##################################################    EMAIL       ##################################################################################
+
+
+sign_blanktxt6 = Text(sign_box, text="            ", grid=[1,5])
+sign_txt6 = Text(sign_box, text="Enter Email", align="left", grid=[0,5], size=15)
+sign_email = TextBox(sign_box, hide_text=False, grid=[2,5], width=30)
+sign_email.bg = 'white'
+
+sign_space = Text(sign_window, text = "                ")
+sign_space2 = Text(sign_window, text = "                ")
+sign_exit_box = Box(sign_window, width="fill", align="top")
+sign_exit_button = PushButton(sign_exit_box, text="Cancel", align="bottom", command=go_back,width = 15)
+sign_save_button = PushButton(sign_exit_box, text="Save", align="bottom",command = signup_create_account, width =15)
